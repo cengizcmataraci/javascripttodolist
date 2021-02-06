@@ -33,7 +33,7 @@ function newElement() {
   var inputValue = document.getElementById("task").value;
   var t = document.createTextNode(inputValue);
   li.appendChild(t);
-  if (inputValue === "") {
+  if (inputValue === "" || inputValue.replace(/^\s+|\s+$/g, "").length == 0) {
     $(".error").toast("show");
   } else {
     $(".success").toast("show");
